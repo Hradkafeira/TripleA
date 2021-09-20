@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>785.6,620</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1071,367</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -63,7 +63,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -99,6 +99,7 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>BalaReva.EasyExcel.Utilities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -107,7 +108,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart sap:VirtualizedContainerService.HintSize="664,688.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap:VirtualizedContainerService.HintSize="666,688" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="NullValue" />
       <Variable x:TypeArguments="x:String" Name="VarSalaryFile" />
@@ -142,15 +143,16 @@
       <Variable x:TypeArguments="sd:DataTable" Name="testingeuy" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListLinkEachCandidate" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="contohLink" />
+      <Variable x:TypeArguments="x:String" Name="VarIdEmp" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">20,2.5</av:Point>
-        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
         <x:Double x:Key="Height">652</x:Double>
-        <x:Double x:Key="Width">630</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">80,40.1 250,40.1 250,133.6</av:PointCollection>
+        <x:Double x:Key="Width">632</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">80,40 250,40 250,133.6</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -160,10 +162,10 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">150,215.6</av:Point>
-          <av:Size x:Key="ShapeSize">200,68.8</av:Size>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="ScrapingMyHiring" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="ScrapingMyHiring" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="ListLinkTicketName" />
         </Sequence.Variables>
@@ -172,44 +174,105 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateFolderFile workflow" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="CreateFolderFile.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateFolderFile workflow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="CreateFolderFile.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InOutArgument x:TypeArguments="x:String" x:Key="out_PathLocation">[PathLocation]</InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="out_PathLocation">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="PathLocation" />
+            </InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExcelConfig workflow" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExcelConfig.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExcelConfig workflow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExcelConfig.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryFile">[VarSalaryFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarTicketName">[VarTicketName]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarDirectorate">[VarDirectorate]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarGrade">[VarGrade]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarCandidateName">[VarCandidateName]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryDate">[VarSalaryDate]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarReferenceFile">[VarReferenceFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUFile">[VarMCUFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDate">[VarMCUDate]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUNote">[VarMCUNote]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlMCUFile">[VarUrlMCUFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlReferenceFile">[VarUrlReferenceFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlSalaryFile">[VarUrlSalaryFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDateUpload">[VarMCUDateUpload]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusMCU">[VarStatusMCU]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDate">[VarAssessDate]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessNote">[VarAssessNote]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessFile">[VarAssessFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessUrlFile">[VarAssessUrlFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDateUpload">[VarAssessDateUpload]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusAssess">[VarStatusAssess]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDate">[VarTOEICDate]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICNote">[VarTOEICNote]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICFile">[VarTOEICFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICUrlFile">[VarTOEICUrlFile]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDateUpload">[VarTOEICDateUpload]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusTOEIC">[VarStatusTOEIC]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="NullValue">[NullValue]</InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarSalaryFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarTicketName">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTicketName" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarDirectorate">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarDirectorate" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarGrade">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarGrade" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarCandidateName">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarCandidateName" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryDate">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarSalaryDate" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarReferenceFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarReferenceFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDate">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUDate" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUNote">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUNote" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlMCUFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarUrlMCUFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlReferenceFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarUrlReferenceFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlSalaryFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarUrlSalaryFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDateUpload">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUDateUpload" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusMCU">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarStatusMCU" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDate">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessDate" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessNote">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessNote" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessUrlFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessUrlFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDateUpload">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessDateUpload" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusAssess">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarStatusAssess" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDate">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICDate" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICNote">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICNote" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICUrlFile">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICUrlFile" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDateUpload">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICDateUpload" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusTOEIC">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarStatusTOEIC" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="NullValue">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="NullValue" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="VarIdEmp">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarIdEmp" />
+            </InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Login" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://myhiring.indosatooredoo.com/uat/login">
+        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Login" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://myhiring.indosatooredoo.com/uat/login">
           <ui:OpenBrowser.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -221,7 +284,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="IndosatMail" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usr]" />
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="IndosatMail" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usr]" />
                 <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'page tab'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[usr]">
                   <ui:TypeInto.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9270083b-2e1e-4814-8cb0-60acc99eaf27" InformativeScreenshot="17732d1ab840487e35e1714da9ca7b29" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
@@ -278,7 +341,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:OpenBrowser>
-        <Sequence DisplayName="Akses Final Process" sap:VirtualizedContainerService.HintSize="262,68" sap2010:WorkflowViewState.IdRef="Sequence_233">
+        <Sequence DisplayName="Akses Final Process" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_233">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -319,7 +382,7 @@
             </ui:Click.Target>
           </ui:Click>
         </Sequence>
-        <Sequence sap2010:Annotation.AnnotationText="Return Datatable for each link in Column Candidate Final" DisplayName="Get Link Ticket" sap:VirtualizedContainerService.HintSize="262,112" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap2010:Annotation.AnnotationText="Return Datatable for each link in Column Candidate Final" DisplayName="Get Link Ticket" sap:VirtualizedContainerService.HintSize="262,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -332,7 +395,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -361,13 +424,13 @@
             <InArgument x:TypeArguments="scg:List(x:String)">[( From row in LinkTicketNameDT.AsEnumerable() Select Convert.Tostring(row("link")) ).ToList()]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Return Datatable for each candidate in several Ticket Group" DisplayName="Get Candidate List in Ticket Group" sap:VirtualizedContainerService.HintSize="262,112" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListLinkTicketName]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Return Datatable for each candidate in several Ticket Group" DisplayName="Get Candidate List in Ticket Group" sap:VirtualizedContainerService.HintSize="262,108" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListLinkTicketName]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="link" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="509,299" sap2010:WorkflowViewState.IdRef="Sequence_21">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -379,7 +442,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,249" sap2010:WorkflowViewState.IdRef="Sequence_36">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -457,7 +520,7 @@
             <InArgument x:TypeArguments="scg:List(x:String)">[( From row in LinkCandidateGroupDT.AsEnumerable() Select Convert.Tostring(row("SeeDetails")) ).ToList()]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Get Each Candidate" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[Enumerable.Range(0,ListLinkEachCandidate.Count)]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Get Each Candidate" sap:VirtualizedContainerService.HintSize="307,200" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[Enumerable.Range(0,ListLinkEachCandidate.Count)]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -486,7 +549,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,885" sap2010:WorkflowViewState.IdRef="Sequence_231">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,991" sap2010:WorkflowViewState.IdRef="Sequence_231">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="NamaKandidat" />
                           <Variable x:TypeArguments="x:String" Name="uploadDate" />
@@ -500,6 +563,14 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="GetIdEmp" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_483">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:WriteCell Cell="[VarIdEmp+index]" DisplayName="Write IdEmp" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_282" SheetName="Sheet1" Text="[System.Text.RegularExpressions.Regex.Match(ListLinkEachCandidate(Convert.ToInt16(link)).ToString(),&quot;candidate_id=[0-9]+&quot;).Value.Substring(13)]" WorkbookPath="[PathLocation]" />
+                        </Sequence>
                         <Sequence DisplayName="GetTicket" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_388">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="TicketName" />
@@ -604,7 +675,7 @@
                               <OutArgument x:TypeArguments="x:String">[NamaFile]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <If Condition="[NamaFile &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="487,676" sap2010:WorkflowViewState.IdRef="If_66">
+                          <If Condition="[NamaFile &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_66">
                             <If.Then>
                               <Sequence sap2010:Annotation.AnnotationText="Get Salary File table and URL&#xA;&#xA;Return:&#xA;SalaryFile&#xA;Column: &quot;SalaryFile&quot;,&quot;UrlSalaryFile&quot;" DisplayName="GetSalary" sap:VirtualizedContainerService.HintSize="242,518" sap2010:WorkflowViewState.IdRef="Sequence_391">
                                 <Sequence.Variables>
@@ -1151,7 +1222,7 @@
                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence sap2010:Annotation.AnnotationText="Get Upload date Mcu File table&#xA;&#xA;Return:&#xA;UploadDateMcuDT&#xA;Column: &quot;UploadDate&quot;" DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="200,168" sap2010:WorkflowViewState.IdRef="Sequence_408">
+                                <Sequence sap2010:Annotation.AnnotationText="Get Upload date Mcu File table&#xA;&#xA;Return:&#xA;UploadDateMcuDT&#xA;Column: &quot;UploadDate&quot;" DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="242,230" sap2010:WorkflowViewState.IdRef="Sequence_408">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1357,7 +1428,7 @@
                                     </ui:ExtractData.Target>
                                   </ui:ExtractData>
                                 </Sequence>
-                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_47">
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_47">
                                   <ui:MultipleAssign.AssignOperations>
                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_144">
@@ -1471,7 +1542,7 @@
                             </If.Else>
                           </If>
                         </Sequence>
-                        <Sequence DisplayName="GetTOEIC" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_429">
+                        <Sequence DisplayName="GetTOEIC" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_429">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="uploadDateMcu" />
                             <Variable x:TypeArguments="x:String" Name="McuStatus" />
@@ -1502,7 +1573,7 @@
                           </ui:UiElementExists>
                           <If Condition="[TOEICExist]" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="If_82">
                             <If.Then>
-                              <Sequence DisplayName="GetAssessment" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_427">
+                              <Sequence DisplayName="GetAssessment" sap:VirtualizedContainerService.HintSize="242,962" sap2010:WorkflowViewState.IdRef="Sequence_427">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="uploadDateMcu" />
                                   <Variable x:TypeArguments="x:String" Name="McuStatus" />
@@ -1718,7 +1789,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <If Condition="[UploadDateTOEIC &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="487,631" sap2010:WorkflowViewState.IdRef="If_81">
+                                <If Condition="[UploadDateTOEIC &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_81">
                                   <If.Then>
                                     <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetUploadDate" sap:VirtualizedContainerService.HintSize="242,473" sap2010:WorkflowViewState.IdRef="Sequence_425">
                                       <Sequence.Variables>
@@ -1739,7 +1810,7 @@
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence sap2010:Annotation.AnnotationText="Get Upload date Mcu File table&#xA;&#xA;Return:&#xA;UploadDateTOEICDT&#xA;Column: &quot;UploadDate&quot;" DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="200,168" sap2010:WorkflowViewState.IdRef="Sequence_424">
+                                      <Sequence sap2010:Annotation.AnnotationText="Get Upload date Mcu File table&#xA;&#xA;Return:&#xA;UploadDateTOEICDT&#xA;Column: &quot;UploadDate&quot;" DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="242,230" sap2010:WorkflowViewState.IdRef="Sequence_424">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1774,7 +1845,7 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_426">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_426">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1787,7 +1858,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="242,598" sap2010:WorkflowViewState.IdRef="Sequence_428">
+                              <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_428">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1823,20 +1894,19 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">370,124</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">470,176 470,214</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">470,175 470,214</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_477">
-            <Assign sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="Assign_14">
+          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_484">
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[l]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String" xml:space="preserve">                              MCU Note :  Not Uploaded
-                                    </InArgument>
+                <InArgument x:TypeArguments="x:String">https://myhiring.indosatooredoo.com/uat/HR_talent/final_process/final_form?candidate_id=54571&amp;ticket_id=475</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1852,13 +1922,13 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">370,214</av:Point>
-              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_478">
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[System.Text.RegularExpressions.Regex.Replace(l.Trim(),&quot;[\n]&quot;,&quot;&quot;).Substring(12)]">
+              <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_485">
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[System.Text.RegularExpressions.Regex.Match(l,&quot;candidate_id=[0-9]+&quot;).Value.Substring(13)]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1875,20 +1945,171 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">360,284</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          <av:Point x:Key="ShapeLocation">370,287</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_479">
+          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_486">
             <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_430">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Get Each Candidate" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_19" Values="[Enumerable.Range(0,contohLink.Count)]">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke createfiledate workflow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="CreateFolderFile.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="out_PathLocation">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="PathLocation" />
+                  </InOutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke excel_config workflow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExcelConfig.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarSalaryFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTicketName">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTicketName" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarDirectorate">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarDirectorate" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarGrade">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarGrade" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarCandidateName">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarCandidateName" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryDate">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarSalaryDate" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarReferenceFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarReferenceFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDate">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUDate" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUNote">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUNote" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlMCUFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarUrlMCUFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlReferenceFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarUrlReferenceFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlSalaryFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarUrlSalaryFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDateUpload">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarMCUDateUpload" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusMCU">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarStatusMCU" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDate">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessDate" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessNote">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessNote" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessUrlFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessUrlFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDateUpload">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarAssessDateUpload" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusAssess">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarStatusAssess" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDate">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICDate" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICNote">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICNote" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICUrlFile">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICUrlFile" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDateUpload">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarTOEICDateUpload" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusTOEIC">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarStatusTOEIC" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="NullValue">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="NullValue" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="VarIdEmp">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VarIdEmp" />
+                  </InOutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+              <Sequence DisplayName="getUrlCandidate" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_476">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Dashboard Page'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_27" InformativeScreenshot="574c96f5fefdcd451efac4ed4c8690ec" Selector="&lt;html app='chrome.exe' title='Dashboard' /&gt;">
+                  <ui:BrowserScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_475">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[testingeuy]" DisplayName="Extract Structured Data 'TBODY'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SeeDetails' attr='href'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='table' idx='1' /&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' idx='2' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ExtractData_107" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl parentid='datatable-final_paginate' tag='UL' /&gt;" SimulateClick="True">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7e95befa-89cc-463d-b45f-6b3e5f141ab8" InformativeScreenshot="50289251a43242b4948a098bc52e3f8a" Selector="&lt;webctrl parentid='datatable-final' tag='TBODY' /&gt;" WaitForReady="COMPLETE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:BrowserScope.Body>
+                </ui:BrowserScope>
+              </Sequence>
+              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">[contohLink]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="scg:List(x:String)">[( From row in testingeuy.AsEnumerable() Select Convert.Tostring(row("SeeDetails")) ).ToList()]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Get Each Candidate" sap:VirtualizedContainerService.HintSize="307,200" sap2010:WorkflowViewState.IdRef="ForEach`1_19" Values="[Enumerable.Range(0,contohLink.Count)]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -1917,7 +2138,7 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_473">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="284,1144" sap2010:WorkflowViewState.IdRef="Sequence_473">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="NamaKandidat" />
                                 <Variable x:TypeArguments="x:String" Name="uploadDate" />
@@ -1931,7 +2152,8 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="GetTicket" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_431">
+                              <ui:WriteCell Cell="[VarIdEmp+index]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="WriteCell_280" SheetName="Sheet1" Text="[System.Text.RegularExpressions.Regex.Match(contohLink(Convert.ToInt16(link)).ToString(),&quot;candidate_id=[0-9]+&quot;).Value.Substring(13)]" WorkbookPath="[PathLocation]" />
+                              <Sequence DisplayName="GetTicket" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_431">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="TicketName" />
                                   <Variable x:TypeArguments="x:String" Name="Directorate" />
@@ -1991,7 +2213,7 @@
                                 <ui:WriteCell Cell="[VarDirectorate+index]" DisplayName="Write Directorate" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WriteCell_226" SheetName="Sheet1" Text="[Directorate.Substring(14)]" WorkbookPath="[PathLocation]" />
                                 <ui:WriteCell Cell="[VarGrade+index]" DisplayName="Write Grade" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WriteCell_227" SheetName="Sheet1" Text="[Grade.Substring(8)]" WorkbookPath="[PathLocation]" />
                               </Sequence>
-                              <Sequence DisplayName="GetNama" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_432">
+                              <Sequence DisplayName="GetNama" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_432">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2219,7 +2441,7 @@
                                     <OutArgument x:TypeArguments="x:String">[Reference]</OutArgument>
                                   </ui:GetFullText.Text>
                                 </ui:GetFullText>
-                                <If Condition="[Reference &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="487,540" sap2010:WorkflowViewState.IdRef="If_86">
+                                <If Condition="[Reference &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_86">
                                   <If.Then>
                                     <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetReference" sap:VirtualizedContainerService.HintSize="242,382" sap2010:WorkflowViewState.IdRef="Sequence_441">
                                       <Sequence.Variables>
@@ -2300,7 +2522,7 @@
                                     <OutArgument x:TypeArguments="x:String">[UrlReference]</OutArgument>
                                   </ui:GetFullText.Text>
                                 </ui:GetFullText>
-                                <If Condition="[UrlReference &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_87">
+                                <If Condition="[UrlReference &lt;&gt; &quot;No data available in table&quot;]" sap:VirtualizedContainerService.HintSize="529,648" sap2010:WorkflowViewState.IdRef="If_87">
                                   <If.Then>
                                     <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetUrlReference" sap:VirtualizedContainerService.HintSize="284,490" sap2010:WorkflowViewState.IdRef="Sequence_444">
                                       <Sequence.Variables>
@@ -2902,7 +3124,7 @@
                                   </If.Else>
                                 </If>
                               </Sequence>
-                              <Sequence DisplayName="GetTOEIC" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_472">
+                              <Sequence DisplayName="GetTOEIC" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_472">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="uploadDateMcu" />
                                   <Variable x:TypeArguments="x:String" Name="McuStatus" />
@@ -2933,7 +3155,7 @@
                                 </ui:UiElementExists>
                                 <If Condition="[TOEICExist]" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="If_100">
                                   <If.Then>
-                                    <Sequence DisplayName="GetAssessment" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_470">
+                                    <Sequence DisplayName="GetAssessment" sap:VirtualizedContainerService.HintSize="242,962" sap2010:WorkflowViewState.IdRef="Sequence_470">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="uploadDateMcu" />
                                         <Variable x:TypeArguments="x:String" Name="McuStatus" />
@@ -3205,7 +3427,7 @@
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_469">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_469">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3218,7 +3440,7 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="242,598" sap2010:WorkflowViewState.IdRef="Sequence_471">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_471">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3248,96 +3470,6 @@
                   </ActivityAction>
                 </ui:ForEach.Body>
               </ui:ForEach>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[contohLink]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[( From row in testingeuy.AsEnumerable() Select Convert.Tostring(row("SeeDetails")) ).ToList()]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <Sequence DisplayName="getUrlCandidate" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_476">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Dashboard Page'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_27" InformativeScreenshot="574c96f5fefdcd451efac4ed4c8690ec" Selector="&lt;html app='chrome.exe' title='Dashboard' /&gt;">
-                  <ui:BrowserScope.Body>
-                    <ActivityAction x:TypeArguments="x:Object">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_475">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[testingeuy]" DisplayName="Extract Structured Data 'TBODY'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SeeDetails' attr='href'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='table' idx='1' /&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' idx='2' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ExtractData_107" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl parentid='datatable-final_paginate' tag='UL' /&gt;" SimulateClick="True">
-                          <ui:ExtractData.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7e95befa-89cc-463d-b45f-6b3e5f141ab8" InformativeScreenshot="50289251a43242b4948a098bc52e3f8a" Selector="&lt;webctrl parentid='datatable-final' tag='TBODY' /&gt;" WaitForReady="COMPLETE">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                            </ui:Target>
-                          </ui:ExtractData.Target>
-                        </ui:ExtractData>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:BrowserScope.Body>
-                </ui:BrowserScope>
-              </Sequence>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke excel_config workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExcelConfig.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryFile">[VarSalaryFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTicketName">[VarTicketName]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarDirectorate">[VarDirectorate]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarGrade">[VarGrade]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarCandidateName">[VarCandidateName]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarSalaryDate">[VarSalaryDate]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarReferenceFile">[VarReferenceFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUFile">[VarMCUFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDate">[VarMCUDate]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUNote">[VarMCUNote]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlMCUFile">[VarUrlMCUFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlReferenceFile">[VarUrlReferenceFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarUrlSalaryFile">[VarUrlSalaryFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarMCUDateUpload">[VarMCUDateUpload]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusMCU">[VarStatusMCU]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDate">[VarAssessDate]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessNote">[VarAssessNote]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessFile">[VarAssessFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessUrlFile">[VarAssessUrlFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarAssessDateUpload">[VarAssessDateUpload]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusAssess">[VarStatusAssess]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDate">[VarTOEICDate]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICNote">[VarTOEICNote]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICFile">[VarTOEICFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICUrlFile">[VarTOEICUrlFile]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarTOEICDateUpload">[VarTOEICDateUpload]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="VarStatusTOEIC">[VarStatusTOEIC]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="NullValue">[NullValue]</InOutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke createfiledate workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="CreateFolderFile.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="out_PathLocation">[PathLocation]</InOutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InvokeWorkflowFile>
             </Sequence>
           </Sequence>
         </ui:CommentOut.Body>
@@ -3347,11 +3479,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">150,133.6</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">250,186.4 250,215.6</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">250,184.6 250,215.6</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Indosat_RPA_Flowchart workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Indosat_RPA_Flowchart.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EmailExtraction" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Indosat_RPA_Flowchart.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
